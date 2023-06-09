@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+<link href="index page css code.css" rel="stylesheet">   
+</head>
+
+
+
+
+
+<body>
+    <form action="https://sheetdb.io/api/v1/lbl1xjki8y6c9" method="post" id="index1"   class="form">
+          <div class="h1">
+            <h1 >Regestration Form</h1>
+        </div>
+        <hr>
+          <div class="fn">
+              <label for="fn" > Firstname : </label>
+            <div class="fn1">  
+              <input type="text" id="fn" name="data[Fn]"><br/>
+            </div>
+          </div>
+          <div class="ln">    
+              <label for="ln" > Lastname : </label>
+            <div class="ln1">  
+              <input type="text" id="ln"name="data[Ln]"> <br> 
+            </div>    
+          </div>
+          <div class="date">
+              <lable for="date" >Date of Birth</lable>
+            <div class="date1">  
+              <input type="date" id="date" name="data[date]"><br>     
+            </div>  
+          </div>
+          <div class="email"> 
+              <label for="em">Email Id</label>
+            <div class="email1">  
+              <input type="email" id="em" name="data[email]"><br>
+            </div>   
+          </div>
+          <div class="number"> 
+              <label for="pn">Moblie Number</label>
+            <div class="number1">  
+              <input type="number" id="pn" name="data[number]"><br> 
+            </div>
+          </div>
+          <div class="submit">    
+              <input type="submit" name="submit" value="Submit" >
+          </div>
+          <div class="reset">    
+              <input type="reset"   name="submit" value="Reset">    
+          </div>   
+</table>    
+</form>       
+
+    <script>
+        var form = document.getElementById('index1');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      fetch(form.action, {
+          method : "POST",
+          body: new FormData(document.getElementById("index1")),
+      }).then(
+          response => response.json()
+      ).then((html) => {
+            // you can put any JS code here
+            window.open('page2 link to index page.html', '_blank');
+
+      });
+    });
+    </script>
+</body>
+</html>
